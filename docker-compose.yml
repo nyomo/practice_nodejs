@@ -1,0 +1,16 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    container_name: webapp-dev
+    volumes:
+      - .:/workspace:cached
+      # node_modules はコンテナ内に保持（ホストへはマウントしない）
+    ports:
+      - "5173:5173"   # Vite dev server
+      - "9229:9229"   # Node inspector (任意)
+    environment:
+      - NODE_ENV=development
+    command: bash -lc "npm install && npm run dev -- --host 0.0.0.0"
+    # Dev Container で使う想定（devcontainer.jsonから参照）

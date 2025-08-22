@@ -1,21 +1,17 @@
 {
-  "name": "frontend (web)",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "web",
-  "workspaceFolder": "/work",
-  "overrideCommand": true,
-  "features": {},
+  "name": "your-app (Node + TS + React + Vite)",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
       ]
     }
   },
-  "postCreateCommand": "cd frontend && (npm ci || npm install)",
-  "remoteEnv": {
-    "CHOKIDAR_USEPOLLING": "true",
-    "WATCHPACK_POLLING": "true"
-  }
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
 }
