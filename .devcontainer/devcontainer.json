@@ -12,6 +12,7 @@
       ]
     }
   },
-  "postCreateCommand": "npm install",
-  "remoteUser": "node"
+  "postCreateCommand": "git config --global --add safe.directory /workspace && npm install",
+  "remoteUser": "node",
+  "containerUser": "node"
 }
