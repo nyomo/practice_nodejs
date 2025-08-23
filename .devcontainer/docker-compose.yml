@@ -1,0 +1,13 @@
+volumes:
+  node_modules:
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: vscode_devcontainer
+    volumes:
+      - ..:/workdir:cached
+      - node_modules:/workdir/node_modules
+    working_dir: /workdir
+    tty: true

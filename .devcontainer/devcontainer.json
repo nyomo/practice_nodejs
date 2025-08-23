@@ -1,18 +1,7 @@
 {
-  "name": "your-app (Node + TS + React + Vite)",
-  "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "dev",
-  "workspaceFolder": "/workspace",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.vscode-typescript-next",
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
-      ]
-    }
-  },
-  "postCreateCommand": "git config --global --add safe.directory /workspace && npm install",
-  "remoteUser": "node",
-  "containerUser": "node"
+    "name": "Node.js Dev Container",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workdir",
+    "postCreateCommand": "apt-get install -y --no-install-recommends gh curl ssh && git config --global --add safe.directory /workspace" 
 }
