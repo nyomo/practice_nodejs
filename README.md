@@ -3,12 +3,10 @@
 最初にやること
 
 ```
-docker compose run --rm web npx --yes create-vite@latest . --template react-ts
+npx --yes create-vite@latest app --template react-ts
 ```
 
-frontend/node_modulesができる。
 
 ```
-◇  Current directory is not empty. Please choose how to proceed:
+npm run dev
 ```
-と言われるけど Ignore files and continue する(docker-compose.ymlでfrontendディレクトリ以下にnode_modulesディレクトリが作られてしまうのが原因)
