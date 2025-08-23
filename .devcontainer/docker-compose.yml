@@ -10,4 +10,6 @@ services:
       - ..:/workdir:cached
       - node_modules:/workdir/node_modules
     working_dir: /workdir
+    ports:
+      - 5173:5173
     tty: true
