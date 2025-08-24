@@ -27,5 +27,11 @@ RUN usermod -aG macusers appuser
 RUN mkdir /home/appuser
 RUN chown -R appuser:appgroup /home/appuser
 RUN echo "%appgroup ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/appgroup
+WORKDIR /workdir
+COPY app/package.json /workdir
+RUN npm config set prefix "/workdir/node_modules"
+RUN npm install
+
+RUN chown -R appuser:appgroup /workdir
 
 USER appuser

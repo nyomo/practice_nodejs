@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: vscode_devcontainer
     volumes:
-      - ..:/workdir:cached
       - node_modules:/workdir/node_modules
+      - ..:/workdir:cached
     working_dir: /workdir
     ports:
       - 5173:5173
